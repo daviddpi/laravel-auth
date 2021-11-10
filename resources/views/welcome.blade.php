@@ -40,6 +40,12 @@
                 top: 18px;
             }
 
+            .top-left {
+                position: absolute;
+                left: 10px;
+                top: 18px;
+            }
+
             .content {
                 text-align: center;
             }
@@ -68,7 +74,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('admin.home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -78,6 +84,12 @@
                     @endauth
                 </div>
             @endif
+
+            <div class="top-left links">
+                <a href="{{ route("guest.home") }}">Home Ospiti</a>
+                <a href="{{ route("admin.home") }}">Home Admin</a>
+
+            </div>
 
             <div class="content">
                 <div class="title m-b-md">
